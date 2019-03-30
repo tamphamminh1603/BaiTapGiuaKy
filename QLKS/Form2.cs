@@ -46,6 +46,7 @@ namespace QLKS
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Booking b = new Booking();
+            this.Hide();
             b.ShowDialog();
         }
     }

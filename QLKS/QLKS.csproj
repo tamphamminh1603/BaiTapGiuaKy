@@ -58,6 +58,11 @@
     <Compile Include="Booking.Designer.cs">
       <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
+    <Compile Include="dataQLKSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataQLKSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +98,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="dataQLKSDataSet.xsc">
+      <DependentUpon>dataQLKSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dataQLKSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataQLKSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataQLKSDataSet.xss">
+      <DependentUpon>dataQLKSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -17,8 +17,6 @@ namespace QLKS
             InitializeComponent();
         }
 
-        
-
         private void Form1_Load(object sender, EventArgs e)
         {
             txtTaiKhoan.Focus();
@@ -36,8 +34,8 @@ namespace QLKS
                 if (this.txtMatKhau.Text.Length == 0)
                 MessageBox.Show("Ban chua nhap mat khau");
             else
-                if (this.txtTaiKhoan.Text == "PhamMinhTam" && this.txtMatKhau.Text == "123456")
-                MessageBox.Show("Dang nhap thanh cong !");
+
+                if (this.txtTaiKhoan.Text == "PhamMinhTam" && txtMatKhau.Text == "123456");
             else
                 MessageBox.Show("Mat khau khong dung");
 
@@ -47,14 +45,21 @@ namespace QLKS
             Form2 fm = new Form2();
             if (this.txtTaiKhoan.Text == "PhamMinhTam" && this.txtMatKhau.Text == "123456")
             {
-                fm.Show();
+                this.Hide();
+                fm.ShowDialog();
+                this.Show();
             }
             dangnhap();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult hoi;
+            hoi = MessageBox.Show("Bạn có muốn thoát không?", "thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hoi == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
