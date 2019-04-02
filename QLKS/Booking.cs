@@ -41,39 +41,18 @@ namespace QLKS
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btthoat_Click(object sender, EventArgs e)
         {
             DialogResult hoi;
             hoi = MessageBox.Show("Bạn có muốn thoát không?", "thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(hoi == DialogResult.Yes)
-            {
-                this.Close();
+            if (hoi == DialogResult.Yes)
+            {      
+                Form2 f = new Form2();
+                this.Hide();
+                f.ShowDialog();
+                            
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+        
         }
 
         private void Booking_Load(object sender, EventArgs e)
@@ -81,15 +60,7 @@ namespace QLKS
             ketnoi();
         }
 
-        private void lbDonVi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+      
         int index;
         private void DgvDanhSachPhieuDK_Click(object sender, EventArgs e)
         {
@@ -180,7 +151,6 @@ namespace QLKS
                 SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
-
         }
     }
 }

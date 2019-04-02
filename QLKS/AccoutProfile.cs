@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace QLKS
 {
@@ -9,7 +11,7 @@ namespace QLKS
         {
             InitializeComponent();
         }
-
+    
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

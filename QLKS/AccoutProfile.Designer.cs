@@ -67,6 +67,7 @@
             // 
             this.txtTaiKhoan.Location = new System.Drawing.Point(183, 16);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.ReadOnly = true;
             this.txtTaiKhoan.Size = new System.Drawing.Size(313, 20);
             this.txtTaiKhoan.TabIndex = 1;
             // 

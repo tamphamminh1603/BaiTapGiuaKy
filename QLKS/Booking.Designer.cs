@@ -40,6 +40,7 @@
             this.txtNgayDen = new System.Windows.Forms.DateTimePicker();
             this.txtNgayDK = new System.Windows.Forms.DateTimePicker();
             this.btThem = new System.Windows.Forms.Button();
+            this.txtHoaDon = new System.Windows.Forms.TextBox();
             this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.txtSoLuongPhong = new System.Windows.Forms.TextBox();
             this.txtTienCoc = new System.Windows.Forms.TextBox();
@@ -48,8 +49,9 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtMaPhieuDP = new System.Windows.Forms.TextBox();
             this.lbMaPhieuDV = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbDonVi = new System.Windows.Forms.Label();
+            this.lbMaHoaDon = new System.Windows.Forms.Label();
+            this.lbTrangThai = new System.Windows.Forms.Label();
+            this.lbSoLuongPhong = new System.Windows.Forms.Label();
             this.lbTienCoc = new System.Windows.Forms.Label();
             this.lbMaPhong = new System.Windows.Forms.Label();
             this.lbNgayTraPhong = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataQLKSDataSet = new QLKS.dataQLKSDataSet();
             this.dataQLKSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lbMaHoaDon = new System.Windows.Forms.Label();
-            this.txtHoaDon = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDanhSachPhieuDK)).BeginInit();
@@ -81,7 +81,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(907, 532);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox2
             // 
@@ -155,8 +154,8 @@
             this.groupBox1.Controls.Add(this.txtMaPhieuDP);
             this.groupBox1.Controls.Add(this.lbMaPhieuDV);
             this.groupBox1.Controls.Add(this.lbMaHoaDon);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lbDonVi);
+            this.groupBox1.Controls.Add(this.lbTrangThai);
+            this.groupBox1.Controls.Add(this.lbSoLuongPhong);
             this.groupBox1.Controls.Add(this.lbTienCoc);
             this.groupBox1.Controls.Add(this.lbMaPhong);
             this.groupBox1.Controls.Add(this.lbNgayTraPhong);
@@ -171,7 +170,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtNgayTraPhong
             // 
@@ -207,6 +205,13 @@
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // txtHoaDon
+            // 
+            this.txtHoaDon.Location = new System.Drawing.Point(132, 351);
+            this.txtHoaDon.Name = "txtHoaDon";
+            this.txtHoaDon.Size = new System.Drawing.Size(141, 22);
+            this.txtHoaDon.TabIndex = 1;
             // 
             // txtTrangThai
             // 
@@ -267,29 +272,38 @@
             this.lbMaPhieuDV.TabIndex = 0;
             this.lbMaPhieuDV.Text = "Tên loại phòng :";
             // 
-            // label2
+            // lbMaHoaDon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 331);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Tag = "";
-            this.label2.Text = "Trạng thái:";
-            this.label2.Click += new System.EventHandler(this.lbDonVi_Click);
+            this.lbMaHoaDon.AutoSize = true;
+            this.lbMaHoaDon.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaHoaDon.Location = new System.Drawing.Point(4, 355);
+            this.lbMaHoaDon.Name = "lbMaHoaDon";
+            this.lbMaHoaDon.Size = new System.Drawing.Size(58, 15);
+            this.lbMaHoaDon.TabIndex = 0;
+            this.lbMaHoaDon.Tag = "";
+            this.lbMaHoaDon.Text = "Hóa Đơn:";
             // 
-            // lbDonVi
+            // lbTrangThai
             // 
-            this.lbDonVi.AutoSize = true;
-            this.lbDonVi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDonVi.Location = new System.Drawing.Point(5, 296);
-            this.lbDonVi.Name = "lbDonVi";
-            this.lbDonVi.Size = new System.Drawing.Size(97, 15);
-            this.lbDonVi.TabIndex = 0;
-            this.lbDonVi.Tag = "";
-            this.lbDonVi.Text = "Số lượng phòng:";
-            this.lbDonVi.Click += new System.EventHandler(this.lbDonVi_Click);
+            this.lbTrangThai.AutoSize = true;
+            this.lbTrangThai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrangThai.Location = new System.Drawing.Point(6, 328);
+            this.lbTrangThai.Name = "lbTrangThai";
+            this.lbTrangThai.Size = new System.Drawing.Size(68, 15);
+            this.lbTrangThai.TabIndex = 0;
+            this.lbTrangThai.Tag = "";
+            this.lbTrangThai.Text = "Trạng thái:";
+            // 
+            // lbSoLuongPhong
+            // 
+            this.lbSoLuongPhong.AutoSize = true;
+            this.lbSoLuongPhong.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoLuongPhong.Location = new System.Drawing.Point(6, 296);
+            this.lbSoLuongPhong.Name = "lbSoLuongPhong";
+            this.lbSoLuongPhong.Size = new System.Drawing.Size(97, 15);
+            this.lbSoLuongPhong.TabIndex = 0;
+            this.lbSoLuongPhong.Tag = "";
+            this.lbSoLuongPhong.Text = "Số lượng phòng:";
             // 
             // lbTienCoc
             // 
@@ -345,7 +359,7 @@
             // 
             this.lbMaNV.AutoSize = true;
             this.lbMaNV.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaNV.Location = new System.Drawing.Point(6, 66);
+            this.lbMaNV.Location = new System.Drawing.Point(6, 61);
             this.lbMaNV.Name = "lbMaNV";
             this.lbMaNV.Size = new System.Drawing.Size(83, 15);
             this.lbMaNV.TabIndex = 0;
@@ -355,7 +369,7 @@
             // 
             this.lbMaPhieuDP.AutoSize = true;
             this.lbMaPhieuDP.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaPhieuDP.Location = new System.Drawing.Point(6, 32);
+            this.lbMaPhieuDP.Location = new System.Drawing.Point(12, 29);
             this.lbMaPhieuDP.Name = "lbMaPhieuDP";
             this.lbMaPhieuDP.Size = new System.Drawing.Size(116, 15);
             this.lbMaPhieuDP.TabIndex = 0;
@@ -371,7 +385,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi tiết phiếu đặt phòng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataQLKSDataSet
             // 
@@ -383,25 +396,6 @@
             this.dataQLKSDataSetBindingSource.DataSource = this.dataQLKSDataSet;
             this.dataQLKSDataSetBindingSource.Position = 0;
             // 
-            // lbMaHoaDon
-            // 
-            this.lbMaHoaDon.AutoSize = true;
-            this.lbMaHoaDon.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaHoaDon.Location = new System.Drawing.Point(6, 358);
-            this.lbMaHoaDon.Name = "lbMaHoaDon";
-            this.lbMaHoaDon.Size = new System.Drawing.Size(58, 15);
-            this.lbMaHoaDon.TabIndex = 0;
-            this.lbMaHoaDon.Tag = "";
-            this.lbMaHoaDon.Text = "Hóa Đơn:";
-            this.lbMaHoaDon.Click += new System.EventHandler(this.lbDonVi_Click);
-            // 
-            // txtHoaDon
-            // 
-            this.txtHoaDon.Location = new System.Drawing.Point(132, 351);
-            this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.Size = new System.Drawing.Size(141, 22);
-            this.txtHoaDon.TabIndex = 1;
-            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,6 +403,7 @@
             this.ClientSize = new System.Drawing.Size(907, 532);
             this.Controls.Add(this.panel1);
             this.Name = "Booking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
             this.Load += new System.EventHandler(this.Booking_Load);
             this.panel1.ResumeLayout(false);
@@ -440,7 +435,7 @@
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Label lbMaPhieuDV;
-        private System.Windows.Forms.Label lbDonVi;
+        private System.Windows.Forms.Label lbSoLuongPhong;
         private System.Windows.Forms.Label lbTienCoc;
         private System.Windows.Forms.Label lbMaPhong;
         private System.Windows.Forms.Label lbNgayTraPhong;
@@ -449,7 +444,7 @@
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.TextBox txtSoLuongPhong;
         private System.Windows.Forms.TextBox txtTenLoaiPhong;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTrangThai;
         private System.Windows.Forms.DateTimePicker txtNgayTraPhong;
         private System.Windows.Forms.DateTimePicker txtNgayDen;
         private System.Windows.Forms.DateTimePicker txtNgayDK;
