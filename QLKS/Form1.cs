@@ -35,15 +35,15 @@ namespace QLKS
                 MessageBox.Show("Ban chua nhap mat khau");
             else
 
-                if (this.txtTaiKhoan.Text == "PhamMinhTam" && txtMatKhau.Text == "123456");
+                if (this.txtTaiKhoan.Text == "admin" && txtMatKhau.Text == "123456");
             else
-                MessageBox.Show("Mat khau khong dung");
-
+                MessageBox.Show("Nhập sai!");
+       
         }
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            Form2 fm = new Form2();
-            if (this.txtTaiKhoan.Text == "PhamMinhTam" && this.txtMatKhau.Text == "123456")
+            fQuanLyPhong fm = new fQuanLyPhong();
+            if (this.txtTaiKhoan.Text == "admin" && this.txtMatKhau.Text == "123456")
             {
                 this.Hide();
                 fm.ShowDialog();

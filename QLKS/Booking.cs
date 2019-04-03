@@ -20,7 +20,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 string sql = "select * from datphong";
                 SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
@@ -35,7 +35,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
 
@@ -47,7 +47,7 @@ namespace QLKS
             hoi = MessageBox.Show("Bạn có muốn thoát không?", "thông báo !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (hoi == DialogResult.Yes)
             {      
-                Form2 f = new Form2();
+                fQuanLyPhong f = new fQuanLyPhong();
                 this.Hide();
                 f.ShowDialog();
                             
@@ -84,12 +84,13 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 them = "insert into datphong values('" + txtMaPhieuDP.Text + "','" + txtMaNV.Text + "','" + txtMaKH.Text + "','" + txtTenLoaiPhong.Text + "','" + txtNgayDK.Text + "','" + txtNgayDen.Text + "','" + txtNgayTraPhong.Text + "','" + txtTienCoc.Text + "','" + txtSoLuongPhong.Text + "','" + txtTrangThai.Text + "' ,'" +txtHoaDon.Text+ "')";
                 SqlCommand commandthem = new SqlCommand(them, kn);
                 commandthem.ExecuteNonQuery();
                 ketnoi();
+                MessageBox.Show("Thêm thành công!");
             }
             catch
             {
@@ -97,7 +98,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -108,7 +109,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 xoaphieudatphong = "delete datphong where madp = '" + txtMaPhieuDP.Text + "'";
                 xoahoadon = "delete hoadon where madp = '" + txtMaPhieuDP.Text + "'";
@@ -125,7 +126,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -135,7 +136,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 sua = "update datphong set manv ='" + txtMaNV.Text + "', makh ='" + txtMaKH.Text + "', tenlp ='" + txtTenLoaiPhong.Text + "', ngaydat ='" + txtNgayDK.Text + "', ngayden ='" + txtNgayDen.Text + "', ngaydi ='" + txtNgayTraPhong.Text + "', tiendatcoc ='" + txtTienCoc.Text + "', soluong ='" + txtSoLuongPhong.Text + "',trangthai ='" + txtTrangThai.Text + "' where madp = '" +txtMaPhieuDP.Text+ "'";
                 SqlCommand commandsua = new SqlCommand(sua, kn);
@@ -148,7 +149,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }

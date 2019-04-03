@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QLKS
 {
-    public partial class Form2 : Form
+    public partial class fQuanLyPhong : Form
     {
-        public Form2()
+        public fQuanLyPhong()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 string sql = "select * from phong";
                 SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
@@ -37,7 +37,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
 
@@ -90,12 +90,13 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 them = "insert into phong values('"+txbMaPhong.Text+"','"+txbTenLoaiPhong.Text+"','"+txbTinhTrang.Text +"')";
                 SqlCommand commandthem = new SqlCommand(them, kn);
                 commandthem.ExecuteNonQuery();
                 ketnoi1();
+                MessageBox.Show("Thêm thành công!");
             }
             catch
             {
@@ -103,7 +104,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -113,7 +114,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 xoaphong = "delete phong where maphong = '" + txbMaPhong.Text + "'";              
                 SqlCommand comm = new SqlCommand(xoaphong, kn);
@@ -127,7 +128,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -137,7 +138,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 sua = "update phong set tenlp ='"+txbTenLoaiPhong.Text+"', tinhtrang = '"+ txbTinhTrang.Text+"' where maphong = '" + txbMaPhong.Text+"'";
                 SqlCommand commandsua = new SqlCommand(sua, kn);
@@ -150,7 +151,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
