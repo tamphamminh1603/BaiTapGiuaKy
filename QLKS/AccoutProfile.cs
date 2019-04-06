@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-
+using QLKS;
 namespace QLKS
 {
     public partial class AccoutProfile : Form
@@ -12,10 +12,6 @@ namespace QLKS
             InitializeComponent();
         }
     
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void BtThoat_Click(object sender, EventArgs e)
         {
             DialogResult hoi;

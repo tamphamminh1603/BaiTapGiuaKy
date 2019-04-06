@@ -1,6 +1,6 @@
 ﻿namespace QLKS
 {
-    partial class Form2
+    partial class fQLKS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLKS));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btHuy = new System.Windows.Forms.Button();
@@ -35,8 +36,8 @@
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txbTinhTrang = new System.Windows.Forms.TextBox();
-            this.txbTenLoaiPhong = new System.Windows.Forms.TextBox();
+            this.cbTenLoaiPhong = new System.Windows.Forms.ComboBox();
+            this.cbTinhTrang = new System.Windows.Forms.ComboBox();
             this.txbMaPhong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,10 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ThôngTinKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -128,8 +130,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txbTinhTrang);
-            this.groupBox1.Controls.Add(this.txbTenLoaiPhong);
+            this.groupBox1.Controls.Add(this.cbTenLoaiPhong);
+            this.groupBox1.Controls.Add(this.cbTinhTrang);
             this.groupBox1.Controls.Add(this.txbMaPhong);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -142,19 +144,33 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // txbTinhTrang
+            // cbTenLoaiPhong
             // 
-            this.txbTinhTrang.Location = new System.Drawing.Point(131, 85);
-            this.txbTinhTrang.Name = "txbTinhTrang";
-            this.txbTinhTrang.Size = new System.Drawing.Size(159, 20);
-            this.txbTinhTrang.TabIndex = 1;
+            this.cbTenLoaiPhong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTenLoaiPhong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTenLoaiPhong.FormattingEnabled = true;
+            this.cbTenLoaiPhong.Items.AddRange(new object[] {
+            "Deluxe",
+            "Standard",
+            "Suite",
+            "Superio"});
+            this.cbTenLoaiPhong.Location = new System.Drawing.Point(131, 60);
+            this.cbTenLoaiPhong.Name = "cbTenLoaiPhong";
+            this.cbTenLoaiPhong.Size = new System.Drawing.Size(159, 21);
+            this.cbTenLoaiPhong.TabIndex = 3;
             // 
-            // txbTenLoaiPhong
+            // cbTinhTrang
             // 
-            this.txbTenLoaiPhong.Location = new System.Drawing.Point(131, 56);
-            this.txbTenLoaiPhong.Name = "txbTenLoaiPhong";
-            this.txbTenLoaiPhong.Size = new System.Drawing.Size(159, 20);
-            this.txbTenLoaiPhong.TabIndex = 1;
+            this.cbTinhTrang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTinhTrang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTinhTrang.FormattingEnabled = true;
+            this.cbTinhTrang.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cbTinhTrang.Location = new System.Drawing.Point(131, 88);
+            this.cbTinhTrang.Name = "cbTinhTrang";
+            this.cbTinhTrang.Size = new System.Drawing.Size(159, 21);
+            this.cbTinhTrang.TabIndex = 3;
             // 
             // txbMaPhong
             // 
@@ -214,20 +230,21 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
-            this.thôngTinTàiKhoảnToolStripMenuItem});
+            this.AdminToolStripMenuItem,
+            this.thôngTinTàiKhoảnToolStripMenuItem,
+            this.ThôngTinKháchHàngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(736, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // adminToolStripMenuItem
+            // AdminToolStripMenuItem
             // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.adminToolStripMenuItem.Text = "Đăng Ký Phòng";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            this.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem";
+            this.AdminToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.AdminToolStripMenuItem.Text = "Đăng ký phòng";
+            this.AdminToolStripMenuItem.Click += new System.EventHandler(this.AdminToolStripMenuItem_Click_1);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
@@ -241,16 +258,23 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
+            // 
+            // ThôngTinKháchHàngToolStripMenuItem
+            // 
+            this.ThôngTinKháchHàngToolStripMenuItem.Name = "ThôngTinKháchHàngToolStripMenuItem";
+            this.ThôngTinKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.ThôngTinKháchHàngToolStripMenuItem.Text = "Thông tin khách hàng";
+            this.ThôngTinKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.ThôngTinKháchHàngToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -291,7 +315,7 @@
             this.DgvQLKS.TabIndex = 0;
             this.DgvQLKS.Click += new System.EventHandler(this.DgvQLKS_Click);
             // 
-            // Form2
+            // fQLKS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -300,10 +324,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form2";
+            this.Name = "fQLKS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Quản Lý Khách Sạn";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -323,7 +348,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AdminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btHuy;
@@ -331,8 +356,6 @@
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txbTinhTrang;
-        private System.Windows.Forms.TextBox txbTenLoaiPhong;
         private System.Windows.Forms.TextBox txbMaPhong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -345,5 +368,8 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.DataGridView DgvQLKS;
+        private System.Windows.Forms.ComboBox cbTinhTrang;
+        private System.Windows.Forms.ComboBox cbTenLoaiPhong;
+        private System.Windows.Forms.ToolStripMenuItem ThôngTinKháchHàngToolStripMenuItem;
     }
 }

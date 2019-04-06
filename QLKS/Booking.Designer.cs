@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Booking));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btthoat = new System.Windows.Forms.Button();
@@ -36,15 +37,15 @@
             this.btXoa = new System.Windows.Forms.Button();
             this.DgvDanhSachPhieuDK = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTrangThai = new System.Windows.Forms.ComboBox();
+            this.cbTenLoaiPhong = new System.Windows.Forms.ComboBox();
             this.txtNgayTraPhong = new System.Windows.Forms.DateTimePicker();
             this.txtNgayDen = new System.Windows.Forms.DateTimePicker();
             this.txtNgayDK = new System.Windows.Forms.DateTimePicker();
             this.btThem = new System.Windows.Forms.Button();
             this.txtHoaDon = new System.Windows.Forms.TextBox();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.txtSoLuongPhong = new System.Windows.Forms.TextBox();
             this.txtTienCoc = new System.Windows.Forms.TextBox();
-            this.txtTenLoaiPhong = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtMaPhieuDP = new System.Windows.Forms.TextBox();
@@ -140,15 +141,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbTrangThai);
+            this.groupBox1.Controls.Add(this.cbTenLoaiPhong);
             this.groupBox1.Controls.Add(this.txtNgayTraPhong);
             this.groupBox1.Controls.Add(this.txtNgayDen);
             this.groupBox1.Controls.Add(this.txtNgayDK);
             this.groupBox1.Controls.Add(this.btThem);
             this.groupBox1.Controls.Add(this.txtHoaDon);
-            this.groupBox1.Controls.Add(this.txtTrangThai);
             this.groupBox1.Controls.Add(this.txtSoLuongPhong);
             this.groupBox1.Controls.Add(this.txtTienCoc);
-            this.groupBox1.Controls.Add(this.txtTenLoaiPhong);
             this.groupBox1.Controls.Add(this.txtMaKH);
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.txtMaPhieuDP);
@@ -171,12 +172,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
             // 
+            // cbTrangThai
+            // 
+            this.cbTrangThai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTrangThai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTrangThai.FormattingEnabled = true;
+            this.cbTrangThai.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cbTrangThai.Location = new System.Drawing.Point(131, 321);
+            this.cbTrangThai.Name = "cbTrangThai";
+            this.cbTrangThai.Size = new System.Drawing.Size(144, 24);
+            this.cbTrangThai.TabIndex = 5;
+            // 
+            // cbTenLoaiPhong
+            // 
+            this.cbTenLoaiPhong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTenLoaiPhong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTenLoaiPhong.FormattingEnabled = true;
+            this.cbTenLoaiPhong.Items.AddRange(new object[] {
+            "Deluxe",
+            "Standard",
+            "Suite",
+            "Superio"});
+            this.cbTenLoaiPhong.Location = new System.Drawing.Point(131, 119);
+            this.cbTenLoaiPhong.Name = "cbTenLoaiPhong";
+            this.cbTenLoaiPhong.Size = new System.Drawing.Size(145, 24);
+            this.cbTenLoaiPhong.TabIndex = 5;
+            // 
             // txtNgayTraPhong
             // 
             this.txtNgayTraPhong.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayTraPhong.Location = new System.Drawing.Point(132, 216);
             this.txtNgayTraPhong.Name = "txtNgayTraPhong";
-            this.txtNgayTraPhong.Size = new System.Drawing.Size(142, 22);
+            this.txtNgayTraPhong.Size = new System.Drawing.Size(144, 22);
             this.txtNgayTraPhong.TabIndex = 4;
             // 
             // txtNgayDen
@@ -184,15 +213,15 @@
             this.txtNgayDen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayDen.Location = new System.Drawing.Point(132, 182);
             this.txtNgayDen.Name = "txtNgayDen";
-            this.txtNgayDen.Size = new System.Drawing.Size(142, 22);
+            this.txtNgayDen.Size = new System.Drawing.Size(144, 22);
             this.txtNgayDen.TabIndex = 4;
             // 
             // txtNgayDK
             // 
             this.txtNgayDK.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtNgayDK.Location = new System.Drawing.Point(133, 148);
+            this.txtNgayDK.Location = new System.Drawing.Point(131, 148);
             this.txtNgayDK.Name = "txtNgayDK";
-            this.txtNgayDK.Size = new System.Drawing.Size(142, 22);
+            this.txtNgayDK.Size = new System.Drawing.Size(145, 22);
             this.txtNgayDK.TabIndex = 4;
             // 
             // btThem
@@ -210,56 +239,42 @@
             // 
             this.txtHoaDon.Location = new System.Drawing.Point(132, 351);
             this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.Size = new System.Drawing.Size(141, 22);
+            this.txtHoaDon.Size = new System.Drawing.Size(144, 22);
             this.txtHoaDon.TabIndex = 1;
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Location = new System.Drawing.Point(133, 324);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(141, 22);
-            this.txtTrangThai.TabIndex = 1;
             // 
             // txtSoLuongPhong
             // 
-            this.txtSoLuongPhong.Location = new System.Drawing.Point(133, 292);
+            this.txtSoLuongPhong.Location = new System.Drawing.Point(131, 292);
             this.txtSoLuongPhong.Name = "txtSoLuongPhong";
-            this.txtSoLuongPhong.Size = new System.Drawing.Size(141, 22);
+            this.txtSoLuongPhong.Size = new System.Drawing.Size(144, 22);
             this.txtSoLuongPhong.TabIndex = 1;
             // 
             // txtTienCoc
             // 
-            this.txtTienCoc.Location = new System.Drawing.Point(133, 257);
+            this.txtTienCoc.Location = new System.Drawing.Point(131, 255);
             this.txtTienCoc.Name = "txtTienCoc";
-            this.txtTienCoc.Size = new System.Drawing.Size(141, 22);
+            this.txtTienCoc.Size = new System.Drawing.Size(145, 22);
             this.txtTienCoc.TabIndex = 1;
-            // 
-            // txtTenLoaiPhong
-            // 
-            this.txtTenLoaiPhong.Location = new System.Drawing.Point(134, 121);
-            this.txtTenLoaiPhong.Name = "txtTenLoaiPhong";
-            this.txtTenLoaiPhong.Size = new System.Drawing.Size(141, 22);
-            this.txtTenLoaiPhong.TabIndex = 1;
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(134, 90);
+            this.txtMaKH.Location = new System.Drawing.Point(131, 90);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(141, 22);
+            this.txtMaKH.Size = new System.Drawing.Size(145, 22);
             this.txtMaKH.TabIndex = 1;
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(134, 61);
+            this.txtMaNV.Location = new System.Drawing.Point(131, 61);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(141, 22);
+            this.txtMaNV.Size = new System.Drawing.Size(145, 22);
             this.txtMaNV.TabIndex = 1;
             // 
             // txtMaPhieuDP
             // 
-            this.txtMaPhieuDP.Location = new System.Drawing.Point(134, 29);
+            this.txtMaPhieuDP.Location = new System.Drawing.Point(132, 29);
             this.txtMaPhieuDP.Name = "txtMaPhieuDP";
-            this.txtMaPhieuDP.Size = new System.Drawing.Size(141, 22);
+            this.txtMaPhieuDP.Size = new System.Drawing.Size(144, 22);
             this.txtMaPhieuDP.TabIndex = 1;
             // 
             // lbMaPhieuDV
@@ -276,7 +291,7 @@
             // 
             this.lbMaHoaDon.AutoSize = true;
             this.lbMaHoaDon.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaHoaDon.Location = new System.Drawing.Point(4, 355);
+            this.lbMaHoaDon.Location = new System.Drawing.Point(8, 355);
             this.lbMaHoaDon.Name = "lbMaHoaDon";
             this.lbMaHoaDon.Size = new System.Drawing.Size(58, 15);
             this.lbMaHoaDon.TabIndex = 0;
@@ -369,7 +384,7 @@
             // 
             this.lbMaPhieuDP.AutoSize = true;
             this.lbMaPhieuDP.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaPhieuDP.Location = new System.Drawing.Point(12, 29);
+            this.lbMaPhieuDP.Location = new System.Drawing.Point(6, 29);
             this.lbMaPhieuDP.Name = "lbMaPhieuDP";
             this.lbMaPhieuDP.Size = new System.Drawing.Size(116, 15);
             this.lbMaPhieuDP.TabIndex = 0;
@@ -402,6 +417,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 532);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking";
@@ -428,7 +444,6 @@
         private System.Windows.Forms.TextBox txtMaPhieuDP;
         private System.Windows.Forms.Label lbMaPhieuDP;
         private System.Windows.Forms.TextBox txtTienCoc;
-        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Button btthoat;
         private System.Windows.Forms.Button btSua;
@@ -443,15 +458,16 @@
         private System.Windows.Forms.Label lbMaKH;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.TextBox txtSoLuongPhong;
-        private System.Windows.Forms.TextBox txtTenLoaiPhong;
         private System.Windows.Forms.Label lbTrangThai;
         private System.Windows.Forms.DateTimePicker txtNgayTraPhong;
         private System.Windows.Forms.DateTimePicker txtNgayDen;
         private System.Windows.Forms.DateTimePicker txtNgayDK;
-        private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.BindingSource dataQLKSDataSetBindingSource;
         private dataQLKSDataSet dataQLKSDataSet;
         private System.Windows.Forms.TextBox txtHoaDon;
         private System.Windows.Forms.Label lbMaHoaDon;
+        private System.Windows.Forms.ComboBox cbTenLoaiPhong;
+        private System.Windows.Forms.ComboBox cbTrangThai;
+        private System.Windows.Forms.TextBox txtMaKH;
     }
 }

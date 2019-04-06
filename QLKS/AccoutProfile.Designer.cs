@@ -79,7 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(499, 52);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -89,7 +88,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(499, 52);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // TxtTenHienThi
             // 
@@ -116,7 +114,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(499, 52);
             this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtMatKhau
             // 
@@ -145,7 +142,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(499, 52);
             this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtMkMoi
             // 
@@ -182,7 +178,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(499, 52);
             this.panel5.TabIndex = 0;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtNhapLai
             // 

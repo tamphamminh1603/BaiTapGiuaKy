@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QLKS
 {
-    public partial class Form2 : Form
+    public partial class fQLKS : Form
     {
-        public Form2()
+        public fQLKS()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
                 string sql = "select * from phong";
                 SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
@@ -37,7 +37,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Close();
             }
 
@@ -53,21 +53,14 @@ namespace QLKS
         {
             this.Close();
         }
-
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Booking b = new Booking();
-            this.Hide();
-            b.ShowDialog();
-        }
+       
         int index;
-
         private void DgvQLKS_Click(object sender, EventArgs e)
         {
             index = DgvQLKS.CurrentRow.Index;
             txbMaPhong.Text = DgvQLKS.Rows[index].Cells[0].Value.ToString();
-            txbTenLoaiPhong.Text = DgvQLKS.Rows[index].Cells[1].Value.ToString();
-            txbTinhTrang.Text = DgvQLKS.Rows[index].Cells[2].Value.ToString();
+            cbTenLoaiPhong.Text = DgvQLKS.Rows[index].Cells[1].Value.ToString();
+            cbTinhTrang.Text = DgvQLKS.Rows[index].Cells[2].Value.ToString();
             
         }
 
@@ -90,9 +83,9 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
-                them = "insert into phong values('"+txbMaPhong.Text+"','"+txbTenLoaiPhong.Text+"','"+txbTinhTrang.Text +"')";
+                them = "insert into phong values('"+txbMaPhong.Text+"','"+cbTenLoaiPhong.Text+"','"+cbTinhTrang.Text +"')";
                 SqlCommand commandthem = new SqlCommand(them, kn);
                 commandthem.ExecuteNonQuery();
                 ketnoi1();
@@ -103,7 +96,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -113,7 +106,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
                 xoaphong = "delete phong where maphong = '" + txbMaPhong.Text + "'";              
                 SqlCommand comm = new SqlCommand(xoaphong, kn);
@@ -127,7 +120,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -137,9 +130,9 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
-                sua = "update phong set tenlp ='"+txbTenLoaiPhong.Text+"', tinhtrang = '"+ txbTinhTrang.Text+"' where maphong = '" + txbMaPhong.Text+"'";
+                sua = "update phong set tenlp ='"+cbTenLoaiPhong.Text+"', tinhtrang = '"+ cbTinhTrang.Text+"' where maphong = '" + txbMaPhong.Text+"'";
                 SqlCommand commandsua = new SqlCommand(sua, kn);
                 commandsua.ExecuteNonQuery();
                 ketnoi1();
@@ -150,9 +143,23 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Close();
             }
+        }
+
+        private void AdminToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Booking b = new Booking();
+            this.Hide();
+            b.ShowDialog();
+        }
+
+        private void ThôngTinKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQLKH f = new fQLKH();
+            this.Hide();
+            f.ShowDialog();
         }
     }
 }

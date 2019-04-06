@@ -69,11 +69,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="fQLKS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="fQLKS.Designer.cs">
+      <DependentUpon>fQLKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQLKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQLKH.Designer.cs">
+      <DependentUpon>fQLKH.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,8 +92,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="fQLKS.resx">
+      <DependentUpon>fQLKS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQLKH.resx">
+      <DependentUpon>fQLKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
