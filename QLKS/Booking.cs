@@ -18,8 +18,7 @@ namespace QLKS
         }
         private void ketnoi()
         {
-            try
-            {
+            try           {
                 SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
                 string sql = "select * from datphong";
@@ -75,12 +74,12 @@ namespace QLKS
             txtTienCoc.Text = DgvDanhSachPhieuDK.Rows[index].Cells[7].Value.ToString();
             txtSoLuongPhong.Text = DgvDanhSachPhieuDK.Rows[index].Cells[8].Value.ToString();
             cbTrangThai.Text = DgvDanhSachPhieuDK.Rows[index].Cells[9].Value.ToString();
-            txtHoaDon.Text =DgvDanhSachPhieuDK.Rows[index].Cells[10].Value.ToString();
+           
 
         }
 
         //string themKH;
-        string themHD;
+        //string themHD;
         string them;      
         private void btThem_Click(object sender, EventArgs e)
         {
@@ -89,14 +88,15 @@ namespace QLKS
                 SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
 
-                them = "insert into datphong values('" + txtMaPhieuDP.Text + "','" + txtMaNV.Text + "','" + txtMaKH.Text + "','" + cbTenLoaiPhong.Text + "','" + txtNgayDK.Text + "','" + txtNgayDen.Text + "','" + txtNgayTraPhong.Text + "','" + txtTienCoc.Text + "','" + txtSoLuongPhong.Text + "','" + cbTrangThai.Text + "' ,'" +txtHoaDon.Text+ "')";
+                them = "insert into datphong values('" + txtMaPhieuDP.Text + "','" + txtMaNV.Text + "','" + txtMaKH.Text + "','" + cbTenLoaiPhong.Text + "','" + txtNgayDK.Text + "','" + txtNgayDen.Text + "','" + txtNgayTraPhong.Text + "','" + txtTienCoc.Text + "','" + txtSoLuongPhong.Text + "','" + cbTrangThai.Text + "' )";
                 //themKH = "insert in khachhang values('" + txtMaKH.Text + "')";
-                themHD = "insert in hoadon values('" + txtHoaDon.Text + "')";
+                //themHD = "insert in hoadon values('" + txtHoaDon.Text + "')";
                 SqlCommand commandthem = new SqlCommand(them, kn);
                 //SqlCommand command = new SqlCommand(themHD, kn);
                 commandthem.ExecuteNonQuery();
                 //command.ExecuteNonQuery();
                 ketnoi();
+
             }
             catch
             {
@@ -110,7 +110,7 @@ namespace QLKS
         }
 
         string xoaphieudatphong;
-        string xoahoadon;
+       // string xoahoadon;
         private void btXoa_Click(object sender, EventArgs e)
         {
             try
@@ -118,11 +118,11 @@ namespace QLKS
                 SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
                 kn.Open();
                 xoaphieudatphong = "delete datphong where madp = '" + txtMaPhieuDP.Text + "'";
-                xoahoadon = "delete hoadon where madp = '" + txtMaPhieuDP.Text + "'";
+               // xoahoadon = "delete hoadon where madp = '" + txtMaPhieuDP.Text + "'";
                 SqlCommand comm = new SqlCommand(xoaphieudatphong, kn);
-                SqlCommand conn = new SqlCommand(xoahoadon, kn);
+               // SqlCommand conn = new SqlCommand(xoahoadon, kn);
                 comm.ExecuteNonQuery();
-                conn.ExecuteNonQuery();
+                //conn.ExecuteNonQuery();
                 ketnoi();
 
             }
