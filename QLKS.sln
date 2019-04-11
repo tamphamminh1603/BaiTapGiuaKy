@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLKS", "QLKS\QLKS.csproj", "{813925E0-E54F-4E1D-8BAB-36D4C9DE11A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestQLKS", "UnitTestQLKS\UnitTestQLKS.csproj", "{143E8FFC-8496-4B77-8D2F-CBCA9F62E8FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLogin1", "TestLogin1\TestLogin1.csproj", "{D011A7F9-DC06-4495-9038-BF33A40485CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{813925E0-E54F-4E1D-8BAB-36D4C9DE11A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{813925E0-E54F-4E1D-8BAB-36D4C9DE11A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{813925E0-E54F-4E1D-8BAB-36D4C9DE11A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{143E8FFC-8496-4B77-8D2F-CBCA9F62E8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{143E8FFC-8496-4B77-8D2F-CBCA9F62E8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{143E8FFC-8496-4B77-8D2F-CBCA9F62E8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{143E8FFC-8496-4B77-8D2F-CBCA9F62E8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D011A7F9-DC06-4495-9038-BF33A40485CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D011A7F9-DC06-4495-9038-BF33A40485CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D011A7F9-DC06-4495-9038-BF33A40485CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D011A7F9-DC06-4495-9038-BF33A40485CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

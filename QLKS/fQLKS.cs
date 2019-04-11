@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLKS.DAO;
+using QLKS.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,33 +18,46 @@ namespace QLKS
         public fQLKS()
         {
             InitializeComponent();
+            LoadTable();
         }
 
-        private void ketnoi1()
+        public void LoadTable()
         {
-            try
+            List<Table> tablelist = TableDAO.Instance.LoadTableList();
+
+            foreach(Table item in tablelist)
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Open();
-                string sql = "select * from phong";
-                SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
-                SqlDataAdapter com = new SqlDataAdapter(commandsql); // Vận chuyển dữ liệu
-                DataTable table = new DataTable(); // tạo bảng ảo trong hệ thống
-                com.Fill(table); // đỗ dữ liệu vào bảng ảo
-                DgvQLKS.DataSource = table; // bảng ảo được đưa vào dataGridview
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight};
+                btn.Text = item.Maphong + Environment.NewLine + item.Tenlp;
+                btn.Click += Btn_Click;
+                btn.Tag = item;
+
+                switch (item.Tinhtrang)
+                {
+                    case true:
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+
+                flpTable.Controls.Add(btn);
             }
-            catch
-            {
-                MessageBox.Show("Lỗi kết nối vui lòng kiểm tra lại!");
-            }
-            finally
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Close();
-            }
+                
+            //string query = "select * from phong";
+            //DgvQLKS.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        void ShowInfoRoom(int maphong)
+        {
 
         }
-  
+        #region
+        private void Btn_Click(object sender, EventArgs e)
+        {
+           
+        }
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AccoutProfile f = new AccoutProfile();
@@ -53,21 +68,16 @@ namespace QLKS
         {
             this.Close();
         }
-       
-        int index;
-        private void DgvQLKS_Click(object sender, EventArgs e)
-        {
-            index = DgvQLKS.CurrentRow.Index;
-            txbMaPhong.Text = DgvQLKS.Rows[index].Cells[0].Value.ToString();
-            cbTenLoaiPhong.Text = DgvQLKS.Rows[index].Cells[1].Value.ToString();
-            cbTinhTrang.Text = DgvQLKS.Rows[index].Cells[2].Value.ToString();
+        #endregion
+        //int index;
+        //private void DgvQLKS_Click(object sender, EventArgs e)
+        //{
+        //    index = DgvQLKS.CurrentRow.Index;
+        //    txbMaPhong.Text = DgvQLKS.Rows[index].Cells[0].Value.ToString();
+        //    cbTenLoaiPhong.Text = DgvQLKS.Rows[index].Cells[1].Value.ToString();
+        //    cbTinhTrang.Text = DgvQLKS.Rows[index].Cells[2].Value.ToString();
             
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            ketnoi1();
-        }
+        //}
 
         private void btHuy_Click(object sender, EventArgs e)
         {
@@ -81,24 +91,24 @@ namespace QLKS
         string them;
         private void btThem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Open();
-                them = "insert into phong values('"+txbMaPhong.Text+"','"+cbTenLoaiPhong.Text+"','"+cbTinhTrang.Text +"')";
-                SqlCommand commandthem = new SqlCommand(them, kn);
-                commandthem.ExecuteNonQuery();
-                ketnoi1();
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi , Không thêm được!");
-            }
-            finally
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Close();
-            }
+            //try
+            //{
+            //    SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+            //    kn.Open();
+            //    them = "insert into phong values('"+txbMaPhong.Text+"','"+cbTenLoaiPhong.Text+"','"+cbTinhTrang.Text +"')";
+            //    SqlCommand commandthem = new SqlCommand(them, kn);
+            //    commandthem.ExecuteNonQuery();
+            //    LoadTable();
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Lỗi , Không thêm được!");
+            //}
+            //finally
+            //{
+            //    SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+            //    kn.Close();
+            //}
         }
 
         string xoaphong;
@@ -106,12 +116,12 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 xoaphong = "delete phong where maphong = '" + txbMaPhong.Text + "'";              
                 SqlCommand comm = new SqlCommand(xoaphong, kn);
                 comm.ExecuteNonQuery();
-                ketnoi1();
+                LoadTable();
 
             }
             catch
@@ -120,7 +130,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -130,12 +140,12 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 sua = "update phong set tenlp ='"+cbTenLoaiPhong.Text+"', tinhtrang = '"+ cbTinhTrang.Text+"' where maphong = '" + txbMaPhong.Text+"'";
                 SqlCommand commandsua = new SqlCommand(sua, kn);
                 commandsua.ExecuteNonQuery();
-                ketnoi1();
+                LoadTable();
             }
             catch
             {
@@ -143,7 +153,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -160,6 +170,11 @@ namespace QLKS
             fQLKH f = new fQLKH();
             this.Hide();
             f.ShowDialog();
+        }
+
+        private void flpTable_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

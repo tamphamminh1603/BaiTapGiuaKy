@@ -43,14 +43,12 @@
             this.txtNgayDen = new System.Windows.Forms.DateTimePicker();
             this.txtNgayDK = new System.Windows.Forms.DateTimePicker();
             this.btThem = new System.Windows.Forms.Button();
-            this.txtHoaDon = new System.Windows.Forms.TextBox();
             this.txtSoLuongPhong = new System.Windows.Forms.TextBox();
             this.txtTienCoc = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtMaPhieuDP = new System.Windows.Forms.TextBox();
             this.lbMaPhieuDV = new System.Windows.Forms.Label();
-            this.lbMaHoaDon = new System.Windows.Forms.Label();
             this.lbTrangThai = new System.Windows.Forms.Label();
             this.lbSoLuongPhong = new System.Windows.Forms.Label();
             this.lbTienCoc = new System.Windows.Forms.Label();
@@ -93,7 +91,7 @@
             this.groupBox2.Location = new System.Drawing.Point(312, 80);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(587, 332);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách phiếu đăng ký";
             // 
@@ -103,7 +101,7 @@
             this.btthoat.Location = new System.Drawing.Point(465, 286);
             this.btthoat.Name = "btthoat";
             this.btthoat.Size = new System.Drawing.Size(93, 29);
-            this.btthoat.TabIndex = 3;
+            this.btthoat.TabIndex = 14;
             this.btthoat.Text = "Thoát";
             this.btthoat.UseVisualStyleBackColor = true;
             this.btthoat.Click += new System.EventHandler(this.btthoat_Click);
@@ -114,7 +112,7 @@
             this.btSua.Location = new System.Drawing.Point(349, 286);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(93, 29);
-            this.btSua.TabIndex = 3;
+            this.btSua.TabIndex = 13;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
             this.btSua.Click += new System.EventHandler(this.btSua_Click);
@@ -125,7 +123,7 @@
             this.btXoa.Location = new System.Drawing.Point(232, 286);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(93, 29);
-            this.btXoa.TabIndex = 3;
+            this.btXoa.TabIndex = 12;
             this.btXoa.Text = "Xóa ";
             this.btXoa.UseVisualStyleBackColor = true;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -136,7 +134,7 @@
             this.DgvDanhSachPhieuDK.Location = new System.Drawing.Point(3, 18);
             this.DgvDanhSachPhieuDK.Name = "DgvDanhSachPhieuDK";
             this.DgvDanhSachPhieuDK.Size = new System.Drawing.Size(581, 245);
-            this.DgvDanhSachPhieuDK.TabIndex = 0;
+            this.DgvDanhSachPhieuDK.TabIndex = 15;
             this.DgvDanhSachPhieuDK.Click += new System.EventHandler(this.DgvDanhSachPhieuDK_Click);
             // 
             // groupBox1
@@ -147,14 +145,12 @@
             this.groupBox1.Controls.Add(this.txtNgayDen);
             this.groupBox1.Controls.Add(this.txtNgayDK);
             this.groupBox1.Controls.Add(this.btThem);
-            this.groupBox1.Controls.Add(this.txtHoaDon);
             this.groupBox1.Controls.Add(this.txtSoLuongPhong);
             this.groupBox1.Controls.Add(this.txtTienCoc);
             this.groupBox1.Controls.Add(this.txtMaKH);
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.txtMaPhieuDP);
             this.groupBox1.Controls.Add(this.lbMaPhieuDV);
-            this.groupBox1.Controls.Add(this.lbMaHoaDon);
             this.groupBox1.Controls.Add(this.lbTrangThai);
             this.groupBox1.Controls.Add(this.lbSoLuongPhong);
             this.groupBox1.Controls.Add(this.lbTienCoc);
@@ -167,8 +163,8 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 413);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.Size = new System.Drawing.Size(294, 399);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
             // 
@@ -183,7 +179,7 @@
             this.cbTrangThai.Location = new System.Drawing.Point(131, 321);
             this.cbTrangThai.Name = "cbTrangThai";
             this.cbTrangThai.Size = new System.Drawing.Size(144, 24);
-            this.cbTrangThai.TabIndex = 5;
+            this.cbTrangThai.TabIndex = 10;
             // 
             // cbTenLoaiPhong
             // 
@@ -198,7 +194,7 @@
             this.cbTenLoaiPhong.Location = new System.Drawing.Point(131, 119);
             this.cbTenLoaiPhong.Name = "cbTenLoaiPhong";
             this.cbTenLoaiPhong.Size = new System.Drawing.Size(145, 24);
-            this.cbTenLoaiPhong.TabIndex = 5;
+            this.cbTenLoaiPhong.TabIndex = 4;
             // 
             // txtNgayTraPhong
             // 
@@ -206,7 +202,7 @@
             this.txtNgayTraPhong.Location = new System.Drawing.Point(132, 216);
             this.txtNgayTraPhong.Name = "txtNgayTraPhong";
             this.txtNgayTraPhong.Size = new System.Drawing.Size(144, 22);
-            this.txtNgayTraPhong.TabIndex = 4;
+            this.txtNgayTraPhong.TabIndex = 7;
             // 
             // txtNgayDen
             // 
@@ -214,7 +210,7 @@
             this.txtNgayDen.Location = new System.Drawing.Point(132, 182);
             this.txtNgayDen.Name = "txtNgayDen";
             this.txtNgayDen.Size = new System.Drawing.Size(144, 22);
-            this.txtNgayDen.TabIndex = 4;
+            this.txtNgayDen.TabIndex = 6;
             // 
             // txtNgayDK
             // 
@@ -222,53 +218,48 @@
             this.txtNgayDK.Location = new System.Drawing.Point(131, 148);
             this.txtNgayDK.Name = "txtNgayDK";
             this.txtNgayDK.Size = new System.Drawing.Size(145, 22);
-            this.txtNgayDK.TabIndex = 4;
+            this.txtNgayDK.TabIndex = 5;
             // 
             // btThem
             // 
             this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.Location = new System.Drawing.Point(181, 378);
+            this.btThem.Location = new System.Drawing.Point(182, 351);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(93, 29);
-            this.btThem.TabIndex = 3;
+            this.btThem.TabIndex = 11;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // txtHoaDon
-            // 
-            this.txtHoaDon.Location = new System.Drawing.Point(132, 351);
-            this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.Size = new System.Drawing.Size(144, 22);
-            this.txtHoaDon.TabIndex = 1;
             // 
             // txtSoLuongPhong
             // 
             this.txtSoLuongPhong.Location = new System.Drawing.Point(131, 292);
             this.txtSoLuongPhong.Name = "txtSoLuongPhong";
             this.txtSoLuongPhong.Size = new System.Drawing.Size(144, 22);
-            this.txtSoLuongPhong.TabIndex = 1;
+            this.txtSoLuongPhong.TabIndex = 9;
+            this.txtSoLuongPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongPhong_KeyPress);
             // 
             // txtTienCoc
             // 
             this.txtTienCoc.Location = new System.Drawing.Point(131, 255);
             this.txtTienCoc.Name = "txtTienCoc";
             this.txtTienCoc.Size = new System.Drawing.Size(145, 22);
-            this.txtTienCoc.TabIndex = 1;
+            this.txtTienCoc.TabIndex = 8;
+            this.txtTienCoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTienCoc_KeyPress);
             // 
             // txtMaKH
             // 
             this.txtMaKH.Location = new System.Drawing.Point(131, 90);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(145, 22);
-            this.txtMaKH.TabIndex = 1;
+            this.txtMaKH.TabIndex = 3;
             // 
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(131, 61);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(145, 22);
-            this.txtMaNV.TabIndex = 1;
+            this.txtMaNV.TabIndex = 2;
             // 
             // txtMaPhieuDP
             // 
@@ -286,17 +277,6 @@
             this.lbMaPhieuDV.Size = new System.Drawing.Size(94, 15);
             this.lbMaPhieuDV.TabIndex = 0;
             this.lbMaPhieuDV.Text = "Tên loại phòng :";
-            // 
-            // lbMaHoaDon
-            // 
-            this.lbMaHoaDon.AutoSize = true;
-            this.lbMaHoaDon.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaHoaDon.Location = new System.Drawing.Point(8, 355);
-            this.lbMaHoaDon.Name = "lbMaHoaDon";
-            this.lbMaHoaDon.Size = new System.Drawing.Size(58, 15);
-            this.lbMaHoaDon.TabIndex = 0;
-            this.lbMaHoaDon.Tag = "";
-            this.lbMaHoaDon.Text = "Hóa Đơn:";
             // 
             // lbTrangThai
             // 
@@ -464,8 +444,6 @@
         private System.Windows.Forms.DateTimePicker txtNgayDK;
         private System.Windows.Forms.BindingSource dataQLKSDataSetBindingSource;
         private dataQLKSDataSet dataQLKSDataSet;
-        private System.Windows.Forms.TextBox txtHoaDon;
-        private System.Windows.Forms.Label lbMaHoaDon;
         private System.Windows.Forms.ComboBox cbTenLoaiPhong;
         private System.Windows.Forms.ComboBox cbTrangThai;
         private System.Windows.Forms.TextBox txtMaKH;

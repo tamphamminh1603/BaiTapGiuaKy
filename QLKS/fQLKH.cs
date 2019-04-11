@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLKS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,26 +20,28 @@ namespace QLKS
         }
         private void Ketnoi()
         {
-            try
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Open();
-                string sql = "select * from khachhang";
-                SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
-                SqlDataAdapter com = new SqlDataAdapter(commandsql); // Vận chuyển dữ liệu
-                DataTable table = new DataTable(); // tạo bảng ảo trong hệ thống
-                com.Fill(table); // đỗ dữ liệu vào bảng ảo
-                DgvKhachHang.DataSource = table; // bảng ảo được đưa vào dataGridview
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi kết nối vui lòng kiểm tra lại!");
-            }
-            finally
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Close();
-            }
+            string query = "select * from khachhang";
+            DgvKhachHang.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            //try
+            //{
+            //    SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+            //    kn.Open();
+            //    string sql = "select * from khachhang";
+            //    SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
+            //    SqlDataAdapter com = new SqlDataAdapter(commandsql); // Vận chuyển dữ liệu
+            //    DataTable table = new DataTable(); // tạo bảng ảo trong hệ thống
+            //    com.Fill(table); // đỗ dữ liệu vào bảng ảo
+            //    DgvKhachHang.DataSource = table; // bảng ảo được đưa vào dataGridview
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Lỗi kết nối vui lòng kiểm tra lại!");
+            //}
+            //finally
+            //{
+            //    SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
+            //    kn.Close();
+            //}
 
         }
 
@@ -78,10 +81,10 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                
-                them = "insert into khachhang values ('"+txbMaKH.Text+"','"+ txbHoTen.Text+"','"+ txbCMND.Text+"','"+txbSDT.Text+ "','"+txbEmail.Text+"','"+txbDiaChi.Text+"')";
+                them = "insert into khachhang values ('"+txbMaKH.Text+"',N'"+ txbHoTen.Text+"','"+ txbCMND.Text+"','"+txbSDT.Text+ "','"+txbEmail.Text+"',N'"+txbDiaChi.Text+"')";
                 themPhieu = "insert into datphong values ('" +txbMaKH.Text+ "')";
                 SqlCommand commandthem = new SqlCommand(them, kn);
                 commandthem.ExecuteNonQuery();
@@ -93,7 +96,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -103,7 +106,7 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 xoa = "delete khachhang where makh = '" + txbMaKH.Text + "'";
                 SqlCommand comm = new SqlCommand(xoa, kn);
@@ -117,7 +120,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
@@ -127,9 +130,9 @@ namespace QLKS
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
-                sua = "update khachhang set hoten ='" + txbHoTen.Text + "', cmnd ='" + txbCMND.Text + "', sdt ='" + txbSDT.Text + "', email ='" + txbEmail.Text + "', diachi ='" + txbDiaChi.Text + "' where makh ='" + txbMaKH.Text + "'";
+                sua = "update khachhang set hoten = N'" + txbHoTen.Text + "', cmnd ='" + txbCMND.Text + "', sdt ='" + txbSDT.Text + "', email ='" + txbEmail.Text + "', diachi = N'" + txbDiaChi.Text + "' where makh ='" + txbMaKH.Text + "'";
                 SqlCommand commandsua = new SqlCommand(sua, kn);
                 commandsua.ExecuteNonQuery();
                 Ketnoi();
@@ -141,7 +144,7 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         } 

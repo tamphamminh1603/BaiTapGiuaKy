@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QLKS.DAO;
+
+
 namespace QLKS
 {
     public partial class Booking : Form
@@ -18,27 +21,9 @@ namespace QLKS
         }
         private void ketnoi()
         {
-            try
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Open();
-                string sql = "select * from datphong";
-                SqlCommand commandsql = new SqlCommand(sql, kn); //thực thi các câu lệnh trong sql
-                SqlDataAdapter com = new SqlDataAdapter(commandsql); // Vận chuyển dữ liệu
-                DataTable table = new DataTable(); // tạo bảng ảo trong hệ thống
-                com.Fill(table); // đỗ dữ liệu vào bảng ảo
-                DgvDanhSachPhieuDK.DataSource = table; // bảng ảo được đưa vào dataGridview
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi kết nối vui lòng kiểm tra lại!");
-            }
-            finally
-            {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
-                kn.Close();
-            }
-
+            string query = "select * from datphong";
+            DgvDanhSachPhieuDK.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            
         }
 
         private void btthoat_Click(object sender, EventArgs e)
@@ -75,28 +60,29 @@ namespace QLKS
             txtTienCoc.Text = DgvDanhSachPhieuDK.Rows[index].Cells[7].Value.ToString();
             txtSoLuongPhong.Text = DgvDanhSachPhieuDK.Rows[index].Cells[8].Value.ToString();
             cbTrangThai.Text = DgvDanhSachPhieuDK.Rows[index].Cells[9].Value.ToString();
-            txtHoaDon.Text =DgvDanhSachPhieuDK.Rows[index].Cells[10].Value.ToString();
 
         }
 
         //string themKH;
-        string themHD;
+        //string themHD;
         string them;      
         private void btThem_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
 
-                them = "insert into datphong values('" + txtMaPhieuDP.Text + "','" + txtMaNV.Text + "','" + txtMaKH.Text + "','" + cbTenLoaiPhong.Text + "','" + txtNgayDK.Text + "','" + txtNgayDen.Text + "','" + txtNgayTraPhong.Text + "','" + txtTienCoc.Text + "','" + txtSoLuongPhong.Text + "','" + cbTrangThai.Text + "' ,'" +txtHoaDon.Text+ "')";
+                them = "insert into datphong values('" + txtMaPhieuDP.Text + "','" + txtMaNV.Text + "','" + txtMaKH.Text + "','" + cbTenLoaiPhong.Text + "','" + txtNgayDK.Text + "','" + txtNgayDen.Text + "','" + txtNgayTraPhong.Text + "','" + txtTienCoc.Text + "','" + txtSoLuongPhong.Text + "','" + cbTrangThai.Text + "')";
                 //themKH = "insert in khachhang values('" + txtMaKH.Text + "')";
-                themHD = "insert in hoadon values('" + txtHoaDon.Text + "')";
+                //themHD = "insert in hoadon values('" + txtMaPhieuDP.Text + "')";
                 SqlCommand commandthem = new SqlCommand(them, kn);
                 //SqlCommand command = new SqlCommand(themHD, kn);
                 commandthem.ExecuteNonQuery();
                 //command.ExecuteNonQuery();
                 ketnoi();
+        
             }
             catch
             {
@@ -104,25 +90,25 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
 
         string xoaphieudatphong;
-        string xoahoadon;
+        //string xoahoadon;
         private void btXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
                 xoaphieudatphong = "delete datphong where madp = '" + txtMaPhieuDP.Text + "'";
-                xoahoadon = "delete hoadon where madp = '" + txtMaPhieuDP.Text + "'";
+                //xoahoadon = "delete hoadon where madp = '" + txtMaPhieuDP.Text + "'";
                 SqlCommand comm = new SqlCommand(xoaphieudatphong, kn);
-                SqlCommand conn = new SqlCommand(xoahoadon, kn);
+                //SqlCommand conn = new SqlCommand(xoahoadon, kn);
                 comm.ExecuteNonQuery();
-                conn.ExecuteNonQuery();
+                //conn.ExecuteNonQuery();
                 ketnoi();
 
             }
@@ -132,20 +118,24 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
             }
         }
 
+        //string suaHD;
         string sua;
         private void btSua_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Open();
-                sua = "update datphong set manv ='" + txtMaNV.Text + "', makh ='" + txtMaKH.Text + "', tenlp ='" + cbTenLoaiPhong.Text + "', ngaydat ='" + txtNgayDK.Text + "', ngayden ='" + txtNgayDen.Text + "', ngaydi ='" + txtNgayTraPhong.Text + "', tiendatcoc ='" + txtTienCoc.Text + "', soluong ='" + txtSoLuongPhong.Text + "',trangthai ='" + cbTrangThai.Text + "' where madp = '" +txtMaPhieuDP.Text+ "'";
+                sua = "update datphong set manv ='" + txtMaNV.Text + "', makh ='" + txtMaKH.Text + "', tenlp ='" + cbTenLoaiPhong.Text + "', ngaydat ='" + txtNgayDK.Text + "', ngayden ='" + txtNgayDen.Text + "', ngaydi ='" + txtNgayTraPhong.Text + "', tiendatcoc ='" + txtTienCoc.Text + "', soluong ='" + txtSoLuongPhong.Text + "',trangthai ='" + cbTrangThai.Text + "' where madp = '" + txtMaPhieuDP.Text+ "'";
+                //suaHD = "update hoadon set mahd ='" + txtHoaDon + "' where madp ='"+txtMaPhieuDP.Text+"' ";
                 SqlCommand commandsua = new SqlCommand(sua, kn);
+                //SqlCommand command = new SqlCommand(suaHD, kn);
+                //command.ExecuteNonQuery();
                 commandsua.ExecuteNonQuery();
                 ketnoi();
             }
@@ -155,8 +145,24 @@ namespace QLKS
             }
             finally
             {
-                SqlConnection kn = new SqlConnection(@"Data Source=LAPTOP-3CRPGS0S;Initial Catalog=dataQLKS1;Integrated Security=True");
+                SqlConnection kn = new SqlConnection(@"Data Source=.\SQLEXPRESS1;Initial Catalog=dataQLKS;Integrated Security=True");
                 kn.Close();
+            }
+        }
+
+        private void txtTienCoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoLuongPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

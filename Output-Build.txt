@@ -1,4 +1,4 @@
 ﻿1>------ Build started: Project: QLKS, Configuration: Debug Any CPU ------
-1>C:\Users\Admin\Desktop\BTGiuaKy-QLKS\QLKS\Form1.cs(38,91,38,92): warning CS0642: Possible mistaken empty statement
-1>  QLKS -> C:\Users\Admin\Desktop\BTGiuaKy-QLKS\QLKS\bin\Debug\QLKS.exe
+1>C:\Users\Admin\Desktop\QLKSv4\QLKS\fQLKS.cs(91,16,91,20): warning CS0169: The field 'fQLKS.them' is never used
+1>  QLKS -> C:\Users\Admin\Desktop\QLKSv4\QLKS\bin\Debug\QLKS.exe
 ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

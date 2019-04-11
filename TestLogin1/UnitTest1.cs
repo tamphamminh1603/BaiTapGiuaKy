@@ -1,17 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestQLKS
+namespace TestLogin1
 {
     [TestClass]
     public class UnitTest1
     {
         [TestMethod]
-        public void TestLogin()
+        public void TestMethod1()
         {
-            //string taikhoan;
-            //string matkhau;
-            //string kt;
 
         }
     }

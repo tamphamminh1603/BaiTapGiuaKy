@@ -87,7 +87,7 @@
             this.btthoat.Location = new System.Drawing.Point(465, 286);
             this.btthoat.Name = "btthoat";
             this.btthoat.Size = new System.Drawing.Size(93, 29);
-            this.btthoat.TabIndex = 3;
+            this.btthoat.TabIndex = 10;
             this.btthoat.Text = "Thoát";
             this.btthoat.UseVisualStyleBackColor = true;
             this.btthoat.Click += new System.EventHandler(this.btthoat_Click);
@@ -98,7 +98,7 @@
             this.btSua.Location = new System.Drawing.Point(349, 286);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(93, 29);
-            this.btSua.TabIndex = 3;
+            this.btSua.TabIndex = 9;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
             this.btSua.Click += new System.EventHandler(this.btSua_Click);
@@ -109,7 +109,7 @@
             this.btXoa.Location = new System.Drawing.Point(232, 286);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(93, 29);
-            this.btXoa.TabIndex = 3;
+            this.btXoa.TabIndex = 8;
             this.btXoa.Text = "Xóa ";
             this.btXoa.UseVisualStyleBackColor = true;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -120,7 +120,7 @@
             this.DgvKhachHang.Location = new System.Drawing.Point(3, 18);
             this.DgvKhachHang.Name = "DgvKhachHang";
             this.DgvKhachHang.Size = new System.Drawing.Size(575, 245);
-            this.DgvKhachHang.TabIndex = 0;
+            this.DgvKhachHang.TabIndex = 15;
             this.DgvKhachHang.Click += new System.EventHandler(this.DgvKhachHang_Click);
             // 
             // groupBox1
@@ -152,7 +152,7 @@
             this.btThem.Location = new System.Drawing.Point(169, 269);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(93, 29);
-            this.btThem.TabIndex = 3;
+            this.btThem.TabIndex = 7;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
@@ -162,35 +162,35 @@
             this.txbDiaChi.Location = new System.Drawing.Point(129, 199);
             this.txbDiaChi.Name = "txbDiaChi";
             this.txbDiaChi.Size = new System.Drawing.Size(145, 22);
-            this.txbDiaChi.TabIndex = 1;
+            this.txbDiaChi.TabIndex = 6;
             // 
             // txbEmail
             // 
             this.txbEmail.Location = new System.Drawing.Point(129, 162);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(145, 22);
-            this.txbEmail.TabIndex = 1;
+            this.txbEmail.TabIndex = 5;
             // 
             // txbSDT
             // 
             this.txbSDT.Location = new System.Drawing.Point(129, 128);
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Size = new System.Drawing.Size(145, 22);
-            this.txbSDT.TabIndex = 1;
+            this.txbSDT.TabIndex = 4;
             // 
             // txbCMND
             // 
             this.txbCMND.Location = new System.Drawing.Point(129, 89);
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(145, 22);
-            this.txbCMND.TabIndex = 1;
+            this.txbCMND.TabIndex = 3;
             // 
             // txbHoTen
             // 
             this.txbHoTen.Location = new System.Drawing.Point(129, 49);
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(145, 22);
-            this.txbHoTen.TabIndex = 1;
+            this.txbHoTen.TabIndex = 2;
             // 
             // txbMaKH
             // 
@@ -277,7 +277,7 @@
             this.ClientSize = new System.Drawing.Size(893, 453);
             this.Controls.Add(this.panel1);
             this.Name = "fQLKH";
-            this.Text = "fQLKH";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.fQLKH_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

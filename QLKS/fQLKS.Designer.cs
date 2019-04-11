@@ -53,14 +53,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.DgvQLKS = new System.Windows.Forms.DataGridView();
+            this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbGiaPhong = new System.Windows.Forms.Label();
+            this.txbGiaphong = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvQLKS)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,7 +70,7 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(12, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 362);
+            this.panel1.Size = new System.Drawing.Size(338, 427);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -90,7 +91,7 @@
             this.btHuy.Location = new System.Drawing.Point(160, 90);
             this.btHuy.Name = "btHuy";
             this.btHuy.Size = new System.Drawing.Size(64, 35);
-            this.btHuy.TabIndex = 0;
+            this.btHuy.TabIndex = 8;
             this.btHuy.Text = "Hủy";
             this.btHuy.UseVisualStyleBackColor = true;
             this.btHuy.Click += new System.EventHandler(this.btHuy_Click);
@@ -101,7 +102,7 @@
             this.btSua.Location = new System.Drawing.Point(25, 90);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(64, 35);
-            this.btSua.TabIndex = 0;
+            this.btSua.TabIndex = 7;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
             this.btSua.Click += new System.EventHandler(this.btSua_Click);
@@ -112,7 +113,7 @@
             this.btXoa.Location = new System.Drawing.Point(160, 37);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(64, 35);
-            this.btXoa.TabIndex = 0;
+            this.btXoa.TabIndex = 6;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -123,20 +124,21 @@
             this.btThem.Location = new System.Drawing.Point(23, 37);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(64, 35);
-            this.btThem.TabIndex = 0;
+            this.btThem.TabIndex = 5;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbTenLoaiPhong);
             this.groupBox1.Controls.Add(this.cbTinhTrang);
+            this.groupBox1.Controls.Add(this.txbGiaphong);
             this.groupBox1.Controls.Add(this.txbMaPhong);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lbGiaPhong);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(22, 16);
             this.groupBox1.Name = "groupBox1";
@@ -235,7 +237,7 @@
             this.ThôngTinKháchHàngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(736, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(841, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -258,14 +260,14 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -282,7 +284,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(736, 77);
+            this.panel2.Size = new System.Drawing.Size(841, 77);
             this.panel2.TabIndex = 2;
             // 
             // label7
@@ -292,34 +294,51 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(736, 77);
+            this.label7.Size = new System.Drawing.Size(841, 77);
             this.label7.TabIndex = 0;
             this.label7.Text = "Quản Lý Khách Sạn";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.DgvQLKS);
+            this.panel3.Controls.Add(this.flpTable);
             this.panel3.Location = new System.Drawing.Point(356, 110);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(368, 362);
+            this.panel3.Size = new System.Drawing.Size(473, 427);
             this.panel3.TabIndex = 3;
             // 
-            // DgvQLKS
+            // flpTable
             // 
-            this.DgvQLKS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvQLKS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvQLKS.Location = new System.Drawing.Point(0, 0);
-            this.DgvQLKS.Name = "DgvQLKS";
-            this.DgvQLKS.Size = new System.Drawing.Size(368, 362);
-            this.DgvQLKS.TabIndex = 0;
-            this.DgvQLKS.Click += new System.EventHandler(this.DgvQLKS_Click);
+            this.flpTable.AutoScroll = true;
+            this.flpTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpTable.Location = new System.Drawing.Point(0, 0);
+            this.flpTable.Name = "flpTable";
+            this.flpTable.Size = new System.Drawing.Size(473, 427);
+            this.flpTable.TabIndex = 0;
+            this.flpTable.Click += new System.EventHandler(this.flpTable_Click);
+            // 
+            // lbGiaPhong
+            // 
+            this.lbGiaPhong.AutoSize = true;
+            this.lbGiaPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaPhong.Location = new System.Drawing.Point(6, 118);
+            this.lbGiaPhong.Name = "lbGiaPhong";
+            this.lbGiaPhong.Size = new System.Drawing.Size(83, 19);
+            this.lbGiaPhong.TabIndex = 0;
+            this.lbGiaPhong.Text = "Giá Phòng:";
+            // 
+            // txbGiaphong
+            // 
+            this.txbGiaphong.Location = new System.Drawing.Point(131, 117);
+            this.txbGiaphong.Name = "txbGiaphong";
+            this.txbGiaphong.Size = new System.Drawing.Size(159, 20);
+            this.txbGiaphong.TabIndex = 1;
             // 
             // fQLKS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 505);
+            this.ClientSize = new System.Drawing.Size(841, 559);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -329,7 +348,6 @@
             this.Name = "fQLKS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khách Sạn";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -338,7 +356,6 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvQLKS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,9 +384,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
-        private System.Windows.Forms.DataGridView DgvQLKS;
         private System.Windows.Forms.ComboBox cbTinhTrang;
         private System.Windows.Forms.ComboBox cbTenLoaiPhong;
         private System.Windows.Forms.ToolStripMenuItem ThôngTinKháchHàngToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flpTable;
+        private System.Windows.Forms.TextBox txbGiaphong;
+        private System.Windows.Forms.Label lbGiaPhong;
     }
 }
