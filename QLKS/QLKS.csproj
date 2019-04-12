@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\Dataprovider.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="dataQLKSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

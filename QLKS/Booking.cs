@@ -25,7 +25,7 @@ namespace QLKS
             DgvDanhSachPhieuDK.DataSource = DataProvider.Instance.ExecuteQuery(query);
             
         }
-
+         
         private void btthoat_Click(object sender, EventArgs e)
         {
             DialogResult hoi;
