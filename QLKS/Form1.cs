@@ -51,19 +51,14 @@ namespace QLKS
         //    else
         //        MessageBox.Show("Nhập sai!");
         //}
+        void ShowRoom()
+        {
+
+        }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            //if (this.txtTaiKhoan.Text == "admin" && this.txtMatKhau.Text == "123")
-            //{
-            //    fQLKS fm = new fQLKS();
-            //    this.Hide();
-            //    fm.ShowDialog();
-            //    this.Show();
-            //}
-            //dangnhap();
 
-            // Ket noi vs database
             string userName = txtTaiKhoan.Text;
             string passWord = txtMatKhau.Text;
             if (Login(userName, passWord))

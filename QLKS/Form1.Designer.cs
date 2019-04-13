@@ -45,8 +45,10 @@
             // 
             // btn_DN
             // 
+            this.btn_DN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_DN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DN.Location = new System.Drawing.Point(334, 128);
+            this.btn_DN.Location = new System.Drawing.Point(425, 119);
             this.btn_DN.Name = "btn_DN";
             this.btn_DN.Size = new System.Drawing.Size(77, 32);
             this.btn_DN.TabIndex = 2;
@@ -56,9 +58,11 @@
             // 
             // btn_Thoat
             // 
+            this.btn_Thoat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Thoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Thoat.Location = new System.Drawing.Point(428, 128);
+            this.btn_Thoat.Location = new System.Drawing.Point(425, 173);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(77, 32);
             this.btn_Thoat.TabIndex = 3;
@@ -68,15 +72,19 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.txtTaiKhoan);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(6, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 52);
+            this.panel1.Size = new System.Drawing.Size(549, 52);
             this.panel1.TabIndex = 1;
             // 
             // txtTaiKhoan
             // 
+            this.txtTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTaiKhoan.Location = new System.Drawing.Point(183, 16);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(313, 20);
@@ -84,6 +92,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 16);
@@ -94,15 +104,19 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.txtMatKhau);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(6, 61);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(499, 52);
+            this.panel3.Size = new System.Drawing.Size(549, 52);
             this.panel3.TabIndex = 1;
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMatKhau.Location = new System.Drawing.Point(183, 16);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(313, 20);
@@ -121,13 +135,15 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btn_Thoat);
             this.panel2.Controls.Add(this.btn_DN);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(22, 28);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(509, 183);
+            this.panel2.Size = new System.Drawing.Size(555, 247);
             this.panel2.TabIndex = 9;
             // 
             // FormLogin

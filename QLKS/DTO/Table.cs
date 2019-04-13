@@ -30,5 +30,6 @@ namespace QLKS.DTO
         public string Maphong { get => maphong; set => maphong = value; }
         public string Tenlp { get => tenlp; set => tenlp = value; }
         public bool Tinhtrang { get => tinhtrang; set => tinhtrang = value; }
+
     }
 }

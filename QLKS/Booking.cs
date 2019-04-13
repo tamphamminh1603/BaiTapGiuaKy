@@ -84,6 +84,7 @@ namespace QLKS
                 ketnoi();
         
             }
+
             catch
             {
                 MessageBox.Show("Lỗi , Không thêm được!");

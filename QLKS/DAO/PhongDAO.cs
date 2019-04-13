@@ -1,5 +1,7 @@
-﻿using System;
+﻿using QLKS.DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,29 +19,35 @@ namespace QLKS.DAO
         }
 
         private PhongDAO() { }
-
-        //public bool InsertRoom(string maphong, string tenlp, bool tinhtrang)
+        //public string GetListTableByMP(string MaPhong)
         //{
-        //    string query = string.Format("select * from phong");
-
-        //    string result = DataProvider.Instance.ExecuteQuery(query);
-
-        //    return result.Rows.Count > 0;
+        //    return (string)DataProvider.Instance.ExecuteScalar("");
         //}
 
-        //public List<> GetListInfo(string maphong)
+        //public string InsertRoom(string maphong)
         //{
-        //    List<BillInfo> listBillInfo = new List<BillInfo>();
+        //    DataTable data = new DataTable();
+        //    if(data.Rows.Count > 0)
+        //    {
+        //        Table room = new Table(data.Rows[0]);
+        //        return room.Maphong;
+        //    }
+        //    return "";
+        //}
 
-        //    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BillInfo WHERE idBill = " + id);
+        //public List<Table> GetListInfo(string maphong)
+        //{
+        //    List<Table> listTable = new List<Table>();
+
+        //    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM phong WHERE maphong = " + maphong);
 
         //    foreach (DataRow item in data.Rows)
         //    {
-        //        BillInfo info = new BillInfo(item);
-        //        listBillInfo.Add(info);
+        //        Table info = new Table(item);
+        //        listTable.Add(info);
         //    }
 
-        //    return listBillInfo;
+        //    return listTable;
         //}
     }
 }
